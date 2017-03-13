@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="agencyNameColor">#1A237E</color>
+    <color name="bil_item_text_color">#1A237E</color>
+    <color name="amountDueColor">#1A237E</color>
+    <color name="dueDateColor">#1A237E</color>
+    <color name="primary_color">#4A312A</color>
+
+    <!-- about page -->
+    <!-- General -->
+    <color name="about_item_icon_color">#313131</color>
+
+    <!-- Social -->
+    <color name="about_facebook_color">#3b5998</color>
+    <color name="about_twitter_color">#55acee</color>
+    <color name="about_instagram_color">#3f729b</color>
+    <color name="about_play_store_color">#45BBC2</color>
+    <color name="about_youtube_color">#cd201f</color>
+    <color name="about_github_color">#333333</color>
+
+
+    <color name="about_background_color">#303030</color>
+    <color name="about_separator_color">#494949</color>
+
+    <!-- Text -->
+    <color name="about_description_text_color">#C1C1C1</color>
+    <color name="about_item_text_color">#FFFFFF</color>
+    <color name="about_text_color">#C1C1C1</color>
+    <!-- about page -->
+
+    <color name="bill_item_background">#BBDEFB</color>
+</resources>

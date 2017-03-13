@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:id="@+id/bill_item"
+    android:minHeight="@dimen/list_item_height"
+    android:layout_width="match_parent"
+    android:background="#BBDEFB"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/agencyLogo"
+        android:layout_width="@dimen/list_item_height"
+        android:layout_height="@dimen/list_item_height"
+        android:src="@mipmap/ic_launcher"/>
+
+
+
+    <LinearLayout
+        android:id="@+id/text_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/list_item_height">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="top"
+            android:id="@+id/agencyName"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/agencyNameColor"
+            android:textStyle="bold"
+            tools:text="PLDT"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="top"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/bil_item_text_color"
+                android:text="Account Owner:"
+                tools:text="Account Owner:" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="top"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/bil_item_text_color"
+                android:id="@+id/customerName"
+                tools:text="0004"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="top"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/bil_item_text_color"
+                android:text="Amount Due:"
+                tools:text="Amount Due:" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="top"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/bil_item_text_color"
+                android:id="@+id/amountDue"
+                tools:text="P 4444.04"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="top"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/bil_item_text_color"
+                android:text="Due Date:"
+                tools:text="Due Date:" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="top"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/bil_item_text_color"
+                android:id="@+id/dueDate"
+                tools:text="April 19, 1996"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/moreButton"
+        android:layout_width="40dp"
+        android:layout_height="@dimen/list_item_height"
+        android:src="@drawable/ic_action_navigation_more_vert_dark"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="#00000000" />
+
+</RelativeLayout>
