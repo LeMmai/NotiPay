@@ -10,7 +10,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- about page -->
-    <string name="about_page_description" translatable="false" >Notipay is a mobile application that
+    <string name="about_page_description" translatable="false">Notipay is a mobile application that
         allows user to receive, manage and pay bills</string>
 
     <string name="about_contact_us">Contact us</string>
@@ -22,5 +22,19 @@
     <string name="about_github">Fork us on GitHub</string>
     <string name="about_website">Visit our website</string>
     <string name="copy_right">Copyrights © %1$d</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
     <!-- about page -->
 </resources>

@@ -1,5 +1,6 @@
 package com.example.android.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -21,6 +22,9 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

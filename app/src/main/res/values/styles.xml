@@ -70,4 +70,10 @@
     </style>
     <!-- about page -->
 
+    <style name="AppTheme.Dark.Dialog" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">@color/white</item>
+        <item name="android:textColorPrimary">@color/iron</item>
+        <item name="android:background">#558b2f</item>
+    </style>
+
 </resources>

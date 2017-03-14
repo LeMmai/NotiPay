@@ -8,6 +8,8 @@
     <color name="amountDueColor">#1A237E</color>
     <color name="dueDateColor">#1A237E</color>
     <color name="primary_color">#4A312A</color>
+    <color name="white">#FFFFFF</color>
+    <color name="iron">#CCCCCC</color>
 
     <!-- about page -->
     <!-- General -->
