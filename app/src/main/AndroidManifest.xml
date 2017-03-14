@@ -21,7 +21,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GenerateBillActivity" />
-    </application>
 
+        <activity android:name=".GenerateBillActivity" />
+
+        <activity
+            android:name=".MyPreferencesActivity"
+            android:label="Settings" >
+        </activity>
+
+        <activity
+            android:name=".LinkAccountActivity"
+            android:label="Link Accounts"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+
+    </application>
 </manifest>

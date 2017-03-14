@@ -1,5 +1,6 @@
 package com.example.android.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -9,7 +10,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.android.myapplication.about_page.AboutPage_MainActivity;
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         Fragment fragment = null;
-        Class fragmentClass = null;
+        Class fragmentClass;
 
         fragmentClass = MyBills.class;
 
@@ -70,26 +70,32 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
-    }
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
+        Intent i;
         int id = item.getItemId();
 
+
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_settings)
+        {
+            i = new Intent(this, MyPreferencesActivity.class);
+            startActivity(i);
             return true;
         }
+        else
+        {
+            return super.onOptionsItemSelected(item);
+        }
 
-        return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -99,6 +105,7 @@ public class MainActivity extends AppCompatActivity
 
         Fragment fragment = null;
         Class fragmentClass = null;
+        Intent i;
 
         int id = item.getItemId();
 
@@ -111,9 +118,17 @@ public class MainActivity extends AppCompatActivity
             fragmentClass = MyBills.class;
         }*/ else if (id == R.id.nav_manage) {
             fragmentClass = AboutPage_MainActivity.class;
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_link_account) {
+            i = new Intent(this, LinkAccountActivity.class);
+            startActivity(i);
+            return true;
+        } else if (id == R.id.nav_settings) {
+            i = new Intent(this, MyPreferencesActivity.class);
+            startActivity(i);
+            return true;
+        } else if (id == R.id.nav_help) {
             fragmentClass = MyBills.class;
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_logout) {
             fragmentClass = MyBills.class;
         }
 
