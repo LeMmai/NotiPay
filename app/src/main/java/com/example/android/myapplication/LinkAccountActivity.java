@@ -1,8 +1,11 @@
 package com.example.android.myapplication;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,6 +27,7 @@ public class LinkAccountActivity extends AppCompatActivity {
     // Search EditText
     EditText inputSearch;
     AgencyAdapter agencyAdapter;
+    private String m_Text = "";
 
 
     @Override
@@ -65,7 +69,35 @@ public class LinkAccountActivity extends AppCompatActivity {
         agencyListView.setOnItemClickListener( new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(LinkAccountActivity.this, "amazing", Toast.LENGTH_SHORT).show();
+                //get input
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(LinkAccountActivity.this);
+                builder.setTitle("Account Number");
+
+                // Set up the input
+                final EditText input = new EditText(LinkAccountActivity.this);
+                // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+                input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                builder.setView(input);
+
+                // Set up the buttons
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        m_Text = input.getText().toString();
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                builder.show();
+                Toast.makeText(LinkAccountActivity.this, " Get Account Number", Toast.LENGTH_SHORT).show();
+
+                //
             }
         });
 
