@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:id="@+id/agency_item"
+    android:minHeight="@dimen/list_item_height"
+    android:layout_width="match_parent"
+    android:background="#BBDEFB"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/agencyLogo1"
+        android:layout_width="@dimen/list_item_height"
+        android:layout_height="@dimen/list_item_height"
+        android:src="@mipmap/ic_launcher"/>
+
+
+
+    <LinearLayout
+        android:id="@+id/text_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/list_item_height">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:id="@+id/agencyName1"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/agencyNameColor"
+            android:textSize="40sp"
+            tools:text="PLDT"/>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

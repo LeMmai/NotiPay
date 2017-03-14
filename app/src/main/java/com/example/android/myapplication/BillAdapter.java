@@ -92,11 +92,8 @@ public class BillAdapter extends ArrayAdapter<Bill> {
                 MenuInflater inflater = popup.getMenuInflater();
                 inflater.inflate(R.menu.menu_bill_item, popup.getMenu());
                 popup.show();
-
             }
         });
-
-
 
         return listItemView;
     }
