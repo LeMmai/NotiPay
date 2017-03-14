@@ -4,8 +4,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import com.example.android.myapplication.agency.Agency;
+import com.example.android.myapplication.agency.AgencyAdapter;
 
 import java.util.ArrayList;
 
@@ -17,7 +23,7 @@ public class LinkAccountActivity extends AppCompatActivity {
 
     // Search EditText
     EditText inputSearch;
-    BillAdapter billAdapter;
+    AgencyAdapter agencyAdapter;
 
 
     @Override
@@ -27,30 +33,48 @@ public class LinkAccountActivity extends AppCompatActivity {
 
         final ArrayList<Bill> bills = new ArrayList<>();
 
-        bills.add(new Bill("PLDT","0004",1000.04,"03/04/2017","Mel Albert A. Agra"));
-        bills.add(new Bill("BCWD","0005",2000.04,"03/04/2017","Chloe Grace Moretz"));
-        bills.add(new Bill("ANECO","0006",3000.04,"03/04/2017", "Loida Mae A. Ungab"));
-        bills.add(new Bill("ZENERGY","0007",4000.04,"03/04/2017","Juan A. Navarro"));
-        bills.add(new Bill("FIL PRODUCTS","0008",5000.04,"03/04/2017","Kamille "));
-        bills.add(new Bill("GLOBE","0009",6000.04,"03/04/2017","Deborah Herrera"));
-        bills.add(new Bill("SMART","0010",7400.04,"03/04/2017","Nica Oclarit Absin"));
-        bills.add(new Bill("SUN","0011",8023.04,"03/04/2017","Emma Watson"));
-        bills.add(new Bill("TNT","0012",9450.04,"03/04/2017","Ana Mae Go. Dagoc"));
-        bills.add(new Bill("METROBANK","0013",7000.04,"03/04/2017","Rovelyn Gallego"));
+        final ArrayList<Agency> agencies = new ArrayList<>();
 
+        /*agencies.add(new Agency("PLDT","01234567890","Agusan del Norte","Butuan City"));
+        agencies.add(new Agency("BCWD","01234567890","Agusan del Norte","Butuan City"));
+        agencies.add(new Agency("ANECO","01234567890","Agusan del Norte","Butuan City"));
+        agencies.add(new Agency("FIL PRODUCTS","01234567890","Agusan del Norte","Butuan City"));
+        agencies.add(new Agency("ZENERGY","01234567890","Agusan del Norte","Butuan City"));
+        agencies.add(new Agency("SMART","01234567890","Agusan del Norte","Butuan City"));
+        agencies.add(new Agency("GLOBE","01234567890","Agusan del Norte","Butuan City"));
+        agencies.add(new Agency("SUN","01234567890","Agusan del Norte","Butuan City"));
+        agencies.add(new Agency("TNT","01234567890","Agusan del Norte","Butuan City"));
+        agencies.add(new Agency("METROBANK","01234567890","Agusan del Norte","Butuan City"));
+        */
 
-        billAdapter = new BillAdapter(this, bills);
-        ListView billListView = (ListView) findViewById(R.id.listOfAgencies);
+        agencies.add(new Agency("PLDT"));
+        agencies.add(new Agency("BCWD"));
+        agencies.add(new Agency("ANECO"));
+        agencies.add(new Agency("FIL PRODUCTS"));
+        agencies.add(new Agency("ZENERGY"));
+        agencies.add(new Agency("SMART"));
+        agencies.add(new Agency("GLOBE"));
+        agencies.add(new Agency("SUN"));
+        agencies.add(new Agency("TNT"));
+        agencies.add(new Agency("METROBANK"));
+
+        agencyAdapter = new AgencyAdapter(this, agencies);
+        ListView agencyListView = (ListView) findViewById(R.id.listOfAgencies);
         inputSearch = (EditText) findViewById(R.id.inputSearch);
-        billListView.setAdapter(billAdapter);
-
+        agencyListView.setAdapter(agencyAdapter);
+        agencyListView.setOnItemClickListener( new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(LinkAccountActivity.this, "amazing", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         inputSearch.addTextChangedListener(new TextWatcher() {
 
             @Override
             public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
                 // When user changed the Text
-                LinkAccountActivity.this.billAdapter.getFilter().filter(cs);
+                LinkAccountActivity.this.agencyAdapter.getFilter().filter(cs);
             }
 
             @Override
